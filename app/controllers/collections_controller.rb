@@ -25,7 +25,7 @@ class CollectionsController < ApplicationController
     #CREATE a new collection
     post "/collections" do 
         redirect_if_not_logged_in
-        movie = current_user.movies.build(params)
+        collection = current_user.collections.build(params)
         #collection = Collection.new(params)
         #collection.user = current_user
         #collection.user_id = session[:user_id]
@@ -41,7 +41,7 @@ class CollectionsController < ApplicationController
         erb:"collections/edit"
     end
 
-    #UPDATE a movie based on the edit form
+    #UPDATE a collection based on the edit form
     put "/collections/:id" do 
         @collection = Collection.find(params["id"])
         redirect_if_not_authorized
