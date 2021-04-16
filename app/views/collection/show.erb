@@ -1,0 +1,17 @@
+<h2>Collection Details: </h2>
+<h3>Artist: <%= @collection.artist %> </h3>
+<p>Title: <%= @collection.title || "N/A" %></p>
+<p>Year: <%=  @collection.year || "N/A" %></p> <br>
+<p>Movement: <%= @collection.movement || "N/A" %></p> <br>
+<p>Location: <%= @collection.location || "N/A" %></p> <br> 
+<p>Medium: <%= @collection.medium %> </p>
+
+<% if @collection.user == current_user %>
+
+   <a href="/collections/<%= @collection.id %>/edit">Edit</a>
+
+   <form method="POST" action="/collections/<%= @collections.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="DELETE COLLECTION">
+   </form>
+<% end %>

@@ -1,0 +1,21 @@
+<h2>Make a new addition to your art collection here!</h2>
+<form method="POST" action="/collections/new">
+    Artist: <input name="artist name" type="artist name">
+    Title: <input name="title" type="title">
+    Year Made: <input name="year" type="year">
+    Date: <input name="date" type="date">
+    Movement: <input name="movement" type="movement"> 
+    Location: <input name="location" type="location">
+    Medium: <input name="medium" type="medium">
+    <input type="submit" value="Create Collection">
+
+    # Artist Name: 
+    # <select name="artist_id">
+    #     <% Artist.all.each do |artist| %>
+    #         <option value="<%= artist.id %>"><%= artist.name %></option>
+    #     <% end %>   <----- do this for every attr?
+
+    </select>
+
+</form>
+
