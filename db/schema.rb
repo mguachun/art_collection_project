@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2) do
+ActiveRecord::Schema.define(version: 2021_04_19_210850) do
 
   create_table "collections", force: :cascade do |t|
     t.string "artist"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2) do
     t.string "movement"
     t.string "location"
     t.string "medium"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

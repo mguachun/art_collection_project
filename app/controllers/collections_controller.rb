@@ -7,9 +7,8 @@ class CollectionsController < ApplicationController
 
     #view form to CREATE a collection
     get '/collections/new' do 
-        # display the new view 
         if !logged_in? 
-            redirect '/login'  #leave the method 
+            redirect '/login'  
         end
         erb :"collections/new"
     end
@@ -22,16 +21,15 @@ class CollectionsController < ApplicationController
         #displays show view
     end
 
-    #CREATE a new collection
+    #CREATE a new collection item
     post "/collections" do 
         redirect_if_not_logged_in
         collection = current_user.collections.build(params)
         #collection = Collection.new(params)
         #collection.user = current_user
-        #collection.user_id = session[:user_id]
         #collection_user.collections << collection
         collection.save
-        redirect "/collections" #makes a new GET request
+        redirect "/collections/#{collection.id}" #makes a new GET request
     end
 
     #view the form to UPDATE a particular gallery
@@ -42,7 +40,7 @@ class CollectionsController < ApplicationController
     end
 
     #UPDATE a collection based on the edit form
-    put "/collections/:id" do 
+    patch "/collections/:id" do 
         @collection = Collection.find(params["id"])
         redirect_if_not_authorized
         @collection.update(params["collection"])

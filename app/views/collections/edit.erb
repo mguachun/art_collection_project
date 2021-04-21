@@ -1,0 +1,14 @@
+<h1>Edit your collection </h1>
+
+<form method="POST" action="/collections/<%= @collection.id %>">
+
+    <input type="hidden" name="_method" value="PATCH">
+    Artist: <input type="text" name="collection[artist]" value="<%= @collection.artist%>"><br>
+    Title: <input type="text" name="collection[title]" value="<%= @collection.title%>"><br>
+    Year Made: <input type="text" name="collection[year]" value="<%= @collection.year%>"><br>
+    Location: <input type="text" name="collection[location]" value="<%= @collection.location%>"><br>
+    Movement: <input type="text" name="collection[movement]" value="<%= @collection.movement%>"><br>
+    Medium: <input type="text" name="collection[medium]" value="<%= @collection.medium%>"><br>
+    <br>
+    <input type="submit" value="Update Collection">
+</form>
