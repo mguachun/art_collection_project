@@ -9,12 +9,16 @@ class ApplicationController < Sinatra::Base
     set :session_secret, 'supersecretsession'
   end
 
-  get "/" do
-    "Welcome"
-    erb :welcome
-  end
+  # get "/" do
+  #   session.clear
+  #   erb :home
+  # end
 
-  helpers do #allows views to access these methods
+  helpers do
+    def authorized?
+      Collection.find_by(id:params[:collection_id]).user.id == session[:id]
+    end
+
     def logged_in?
       !!current_user #returns boolean
     end
@@ -28,7 +32,7 @@ class ApplicationController < Sinatra::Base
       # end
     end
 
-    private
+    helpers do
     def redirect_if_not_logged_in
       if !logged_in?
         redirect "/login"
@@ -38,6 +42,7 @@ class ApplicationController < Sinatra::Base
 
   end
 
+end
 end
 
 

@@ -2,6 +2,9 @@ class CollectionsController < ApplicationController
     #get all collections - READ
     get "/collections" do
         @collections = Collection.all 
+          if !logged_in?
+            redirect '/login'
+          end
         erb :index
     end
 
@@ -57,8 +60,10 @@ class CollectionsController < ApplicationController
     private 
     def redirect_if_not_authorized
         if @collection.user != current_user
-            redirect "/collections"
+            redirect "/login"
         end
     end
 
 end
+# if !not_logged_In
+#redirect "/login"
