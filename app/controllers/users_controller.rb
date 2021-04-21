@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     end
 
     post "/signup" do
-        u = User.new(email: params["email"], password: params["password"])
+        user = User.new(email: params["email"], password: params["password"])
         if u.email.blank? || u.password.blank? || User.find_by_email(params["email"])
             redirect "/signup"
         else

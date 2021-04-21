@@ -9,41 +9,43 @@ class ApplicationController < Sinatra::Base
     set :session_secret, 'supersecretsession'
   end
 
-  # get "/" do
-  #   session.clear
-  #   erb :home
-  # end
+  get "/" do
+    erb :index
+  end
 
   helpers do
-    def authorized?
-      Collection.find_by(id:params[:collection_id]).user.id == session[:id]
-    end
-
     def logged_in?
-      !!current_user #returns boolean
+      !!session[:user_id]
     end
 
-    def current_user #memoization
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
-      #if @current_user
-      # @current_user
-      #else
-      # @current_user = User.find(params[:user_id])
-      # end
+    def current_user
+      User.find_by_id(session[:user_id])
     end
 
-    helpers do
-    def redirect_if_not_logged_in
-      if !logged_in?
-        redirect "/login"
+    def find_user
+      @user = User.find_by_email(params[:email])
+    end
+
+    def redirect_if_logged_in
+      if logged_in?
+        flash[:errors] = ["Stop! You are already logged in!"]
+        redirect "/"
       end
     end
 
-
+    def redirect_if_not_logged_in
+      unless logged_in?
+        flash[:errors] = ["Please log in to have access to this page!"]
+        redirect "/login"
+      end
+    end
   end
+end
 
-end
-end
+
+
+
+
 
 
  

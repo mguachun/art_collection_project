@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
     #get all collections - READ
     get "/collections" do
-        @collections = Collection.all 
+        @collections = current_user.collections
           if !logged_in?
             redirect '/login'
           end
@@ -65,5 +65,3 @@ class CollectionsController < ApplicationController
     end
 
 end
-# if !not_logged_In
-#redirect "/login"
