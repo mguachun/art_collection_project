@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
         if !logged_in?
             redirect '/login'
         end
-        @collections = current_user.collection
+        @collections = current_user.collections
         erb :index
     end
 
@@ -37,7 +37,7 @@ class CollectionsController < ApplicationController
 
     #view the form to UPDATE a particular gallery
     get "/collections/:id/edit" do
-        @collection = Collection.find(params["id"])
+        @collection = Collection.find(params[:id])
         redirect_if_not_authorized
         erb:"collections/edit"
     end

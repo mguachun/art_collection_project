@@ -3,6 +3,6 @@
 <% if logged_in?  %>
   <h3>Logged in user:  <%= current_user.email %></h3>
 <% end %>
-<% @collections.each do |collection|  %> 
+<% @collections.each do |c|  %> 
   <%= c.id %> -  <a href="/collections/<%=c.id%>"><%=c.title %></a> <br>
 <% end %>
