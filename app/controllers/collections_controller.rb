@@ -1,10 +1,10 @@
 class CollectionsController < ApplicationController
     #get all collections - READ
     get "/collections" do
-        @collections = current_user.collections
-          if !logged_in?
+        if !logged_in?
             redirect '/login'
-          end
+        end
+        @collections = current_user.collection
         erb :index
     end
 
