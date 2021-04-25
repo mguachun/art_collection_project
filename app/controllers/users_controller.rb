@@ -9,7 +9,7 @@ class UsersController < ApplicationController
             redirect "/signup"
         else
             user.save
-            session[:user_id] = user.id  #logs user in
+            session[:user_id] = user.id 
             redirect "/login"
         end
     end
