@@ -1,18 +1,16 @@
 class UsersController < ApplicationController
-
-    #users are able to sign up
     get "/signup" do
         erb :"users/new"
     end
 
     post "/signup" do
         user = User.new(email: params["email"], password: params["password"])
-        if u.email.blank? || u.password.blank? || User.find_by_email(params["email"])
+        if user.email.blank? || user.password.blank? || User.find_by_email(params["email"])
             redirect "/signup"
         else
-            u.save
-            session[:user_id] = u.id  #logs user in
-            redirect "/collections" #redirects elsewhere
+            user.save
+            session[:user_id] = user.id  #logs user in
+            redirect "/login"
         end
     end
 
