@@ -14,11 +14,11 @@ class UsersController < ApplicationController
         end
     end
 
-    get "/login" do #shows form
+    get "/login" do 
         erb :"users/login"
     end
 
-    post "/login" do  #handles/processes form
+    post "/login" do  
          user = User.find_by_email(params[:email])
          if user && user.authenticate(params[:password])
             session[:user_id] = user.id
