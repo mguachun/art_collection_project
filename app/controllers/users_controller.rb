@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     post "/signup" do
         user = User.new(email: params["email"], password: params["password"])
         if user.email.blank? || user.password.blank? || User.find_by_email(params["email"])
-            redirect "/signup"
+            redirect "/signup" #login
         else
             user.save
             session[:user_id] = user.id 
