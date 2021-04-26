@@ -21,7 +21,6 @@ class CollectionsController < ApplicationController
         redirect_if_not_logged_in
         @collection = Collection.find(params["id"])
         erb :"collections/show"
-        #displays show view
     end
 
     #CREATE a new collection item
@@ -65,3 +64,5 @@ class CollectionsController < ApplicationController
     end
 
 end
+
+
