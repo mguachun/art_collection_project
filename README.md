@@ -4,7 +4,7 @@ The GalleryProject is an app that allows a user to sign up and keep track of the
 Shotgun
 Since it is not yet published, use shotgun to run this on your localhost.
 
-Authetnication
+Authentication
 For password encryption and authentication, this pass uses BCrypt gem.
 
 Database
