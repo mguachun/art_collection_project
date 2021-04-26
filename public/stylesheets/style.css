@@ -1,6 +1,30 @@
 
 
+.emphasis {
+    font-family: monospace;
+}
+
+.nav  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(208, 233, 241);
+    display: block;
+    color: rgb(9, 26, 31);
+    text-align: center;
+    padding: 14px 16px;
+  }
+
+
+
 body {
-    background-color: lightblue;
+    background-color: rgb(173, 216, 230);
     text-align: center;
 }
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+
+}
+    
