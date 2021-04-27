@@ -56,6 +56,7 @@ class CollectionsController < ApplicationController
         redirect "/collections"
     end
 
+
     private 
     def redirect_if_not_authorized
         if @collection.user != current_user

@@ -9,6 +9,12 @@ class ApplicationController < Sinatra::Base
     set :session_secret, 'supersecretsession'
   end
 
+  not_found do 
+    status 404
+    erb :error
+  end
+
+
   get "/" do
     session.clear
     erb :home
