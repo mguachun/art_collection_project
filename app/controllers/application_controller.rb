@@ -7,6 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, 'supersecretsession'
+    
   end
 
   not_found do 
@@ -18,6 +19,10 @@ class ApplicationController < Sinatra::Base
   get "/" do
     session.clear
     erb :home
+  end
+
+  error ActiveRecord::RecordNotFound do 
+    redirect to "/"
   end
 
   helpers do
