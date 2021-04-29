@@ -1,4 +1,4 @@
-<u>The GalleryProject<u>
+The GalleryProject
 The GalleryProject is an app that allows a user to sign up and keep track of their own online gallery comprised of piece of art from around the world. 
 
 Shotgun
@@ -12,4 +12,5 @@ For the database we are using ActiveRecord and SQLite3.
 
 Models
 The two models are collection and user. 
+Bcrypt handles the salt and password encryption for protecting a user's password and storing it. 
 
