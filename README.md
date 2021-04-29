@@ -1,4 +1,4 @@
-The GalleryProject
+<u>The GalleryProject<u>
 The GalleryProject is an app that allows a user to sign up and keep track of their own online gallery comprised of piece of art from around the world. 
 
 Shotgun
