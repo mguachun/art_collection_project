@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, 'supersecretsession'
-    # SET :SHOW_EXCEPTIONS, FALSE AT THE END OF PROJECT
+    set :show_exceptions, false
   end
 
   not_found do 
