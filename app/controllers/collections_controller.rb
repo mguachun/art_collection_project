@@ -18,11 +18,8 @@ class CollectionsController < ApplicationController
     post "/collections" do 
         redirect_if_not_logged_in
         collection = current_user.collections.build(params)
-        #collection = Collection.new(params)
-        #collection.user = current_user
-        #collection_user.collections << collection
         collection.save
-        redirect "/collections/#{collection.id}" #makes a new GET request
+        redirect "/collections/#{collection.id}"
     end
 
     get '/collections/:id' do
