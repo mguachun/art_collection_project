@@ -11,7 +11,10 @@ Database
 For the database we are using ActiveRecord and SQLite3.
 
 Models
-The two models are collection and user. 
+The two models are collection and user. The collection contains the belongs_to relationship while the user contains the has_many relationship. The controllers are seperated by single responsibility. 
+
+Controllers
+The collection contains the belongs_to relationship while the user contains the has_many relationship. The controllers are seperated by single responsibility. The collections_controller contains the CRUD actions, the users_controller takes care of signing a user in or logging a user in/out, and the application controller is what is used when a request it made to delegates where the commands go/what they perform. 
 Bcrypt handles the salt and password encryption for protecting a user's password and storing it. 
 
 How to:
