@@ -13,3 +13,5 @@ For the database we are using ActiveRecord and SQLite3.
 Models
 The two models are collection and user. 
 
+How to:
+After cloning this app to your computer, run bundle install to download the appropriate gems to run. Run shotgun to run this site on your local host so you can explore and operate the site. 
