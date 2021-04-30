@@ -5,6 +5,7 @@ class CollectionsController < ApplicationController
             redirect '/login'
         end
         @collections = current_user.collections
+        # @collections = User.find(1).collections
         erb :index
     end
 
