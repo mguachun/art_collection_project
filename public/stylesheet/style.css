@@ -20,7 +20,7 @@ html { font-family: 'Bebas Neue', cursive; font-family: 'Karla', sans-serif;}
     
     font-size: 16px;
   }
-  a {
+  .nav-link {
     position: relative;
     display: block;  
     float: left;
@@ -37,7 +37,7 @@ html { font-family: 'Bebas Neue', cursive; font-family: 'Karla', sans-serif;}
     text-align: center;
     line-height: 2.5em;
   }
-  a::before {
+  .nav-link ::before {
     content: '';
     position: absolute;
     display: block; 
@@ -50,7 +50,7 @@ html { font-family: 'Bebas Neue', cursive; font-family: 'Karla', sans-serif;}
     border-top: 2.5em solid transparent;
     border-right: 1.563em solid #EEE;
   }
-  a::after {
+  .nav-link :after {
     content: '';
     position: absolute;
     display: block;
@@ -67,30 +67,30 @@ html { font-family: 'Bebas Neue', cursive; font-family: 'Karla', sans-serif;}
   
  
   
-  a:hover {  
+  .nav-link:hover {  
     color: #666;
     background: #CCC;
   }
-  a:hover::after {  
+  .nav-link :hover::after {  
     border-top: 2.5em solid #CCC;
     border-right: 1.563em solid transparent;
   }
-  a:hover::before {  
+  .nav-link :hover::before {  
     border-top: 2.5em solid transparent;
     border-right: 1.563em solid #CCC;
   }
   
  
   
-  a:active {  
+  .nav-link a:active {  
     color: #BBB;
     background: #DDD;
   }
-  a:active::after {  
+  .nav-link a:active::after {  
     border-top: 2.5em solid #DDD;
     border-right: 1.563em solid transparent;
   }
-  a:active::before {  
+  .nav-link a:active::before {  
     border-top: 2.5em solid transparent;
     border-right: 1.563em solid #DDD;
   }
