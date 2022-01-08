@@ -1,25 +1,27 @@
 <!DOCTYPE HTML>
 <html> 
   <head>
-  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet/style.css">
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@300&display=swap" rel="stylesheet">
 
-    <title>Gallery/Space</title>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@300&display=swap');
-    </style>
-
+    
+  
   </head>
+  
   <body>
+  <h1 class="title">Gallery/Space</h1>
     <div class="nav">
-      <a href="/collections">All Collections</a> |
-      <a href="/collections/new">Add a New Collection</a> |
-      <a href="/signup"> Sign Up</a> |
-      <a href="/login">Log In</a> |
+      <a href="/collections">All Collections</a> 
+      <a href="/collections/new">Add a New Collection</a> 
+      <a href="/signup"> Sign Up</a> 
+      <a href="/login">Log In</a> 
       <a href="/logout">Log Out</a>
     </div>
     <br>
-    <h1 class="welcome">Gallery/Space</h1>
+    
     <h2 class="emphasis"><em>The virtual home for art collectors and enthusiasts </em></h2>
     <%= yield %>
   </body>
