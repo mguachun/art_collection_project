@@ -1,8 +1,10 @@
 
 
-.emphasis {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@300&display=swap');
+
+/* .emphasis {
     font-family: monospace;
-}
+} */
 
 .nav  {
     list-style-type: none;
@@ -23,11 +25,10 @@ body {
     text-align: center;
 }
 
-h1 {
-    font-family: 'Times New Roman', Times, serif;
 
-}
     
 .welcome {
-    
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Karla', sans-serif;
+
 }
