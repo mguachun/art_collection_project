@@ -1,7 +1,7 @@
-<h1> <%=current_user.email%>'s Art Collection!  </h1>
-<h2> Index View </h2>
+<h1> <%=current_user.email%>'s Gallery  </h1>
+
 <% if logged_in?  %>
-  <h3>Logged in user:  <%= current_user.email %></h3>
+  <h4 >Logged in user:  <%= current_user.email %></h4>
 <% end %>
 <% @collections.each do |c|  %> 
   <a href="/collections/<%=c.id%>"><%=c.title %></a> <br>
