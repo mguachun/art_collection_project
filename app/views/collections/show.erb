@@ -96,10 +96,6 @@ html { font-family: 'Bebas Neue', cursive; font-family: 'Karla', sans-serif;}
     border-right: 1.563em solid #DDD;
   }
 
- 
-
-
-
 body {
     background-color: rgb(255, 255, 255);
     text-align: center;
@@ -111,15 +107,29 @@ body {
     text-align: left;
 }
 
+# .details{
+#    width: 700px;
+#    height: 450px;
+#    border: 5px;
+
+#    text-align: center;
+#    margin-left: 180px;
+# }
+
+.page-title{
+   text-align: left;
+}
 
 </style>
-<h2>Collection Details: </h2>
-<h3>Artist: <%= @collection.artist %> </h3>
-<p>Title: <%= @collection.title || "N/A" %></p>
-<p>Year: <%=  @collection.year || "N/A" %></p> <br>
-<p>Movement: <%= @collection.movement || "N/A" %></p> <br>
-<p>Location: <%= @collection.location || "N/A" %></p> <br> 
-<p>Medium: <%= @collection.medium %> </p>
+<div class="details">
+<h2 class="page-title">Collection Details: </h2>
+<h3>Artist: <%= @collection.artist %> </h3><br>
+<h3>Title: <%= @collection.title || "N/A" %></h3><br>
+<h3>Year: <%=  @collection.year || "N/A" %></h3> <br>
+<h3>Movement: <%= @collection.movement || "N/A" %></h3> <br>
+<h3>Location: <%= @collection.location || "N/A" %></h3> <br> 
+<h3>Medium: <%= @collection.medium %> </h3>
+
 
 <% if @collection.user == current_user %>
 
@@ -130,3 +140,4 @@ body {
       <input type="submit" value="DELETE COLLECTION">
    </form>
 <% end %>
+</div>
