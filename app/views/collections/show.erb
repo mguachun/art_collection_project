@@ -1,3 +1,118 @@
+<style>
+html { font-family: 'Bebas Neue', cursive; font-family: 'Karla', sans-serif;}
+
+
+
+.nav  {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: rgb(230, 230, 234);
+    display: block;
+    color: rgb(9, 26, 31);
+    text-align: center;
+    padding: 20px;
+}
+  .nav {
+    height: 2.500em;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #EEE;
+    
+    font-size: 16px;
+  }
+  .nav-link {
+    position: relative;
+    display: block;  
+    float: left;
+    margin-right: 1.563em;
+    
+    height: 100%;
+    width: 6.25em;
+    
+    cursor: pointer;
+    user-select: none;
+    
+    background: #EEE;
+    color: #555;
+    text-align: center;
+    line-height: 2.5em;
+  }
+  .nav-link ::before {
+    content: '';
+    position: absolute;
+    display: block; 
+   
+    left: -1.5em;
+    
+    width: 0;
+    height: 0;
+    
+    border-top: 2.5em solid transparent;
+    border-right: 1.563em solid #EEE;
+  }
+  .nav-link :after {
+    content: '';
+    position: absolute;
+    display: block;
+    
+    top: 0;  
+    right: -1.5em;
+    
+    width: 0;
+    height: 0;
+    
+    border-top: 2.5em solid #EEE;
+    border-right: 1.563em solid transparent;
+  }
+  
+ 
+  
+  .nav-link:hover {  
+    color: #666;
+    background: #CCC;
+  }
+  .nav-link :hover::after {  
+    border-top: 2.5em solid #CCC;
+    border-right: 1.563em solid transparent;
+  }
+  .nav-link :hover::before {  
+    border-top: 2.5em solid transparent;
+    border-right: 1.563em solid #CCC;
+  }
+  
+ 
+  
+  .nav-link a:active {  
+    color: #BBB;
+    background: #DDD;
+  }
+  .nav-link a:active::after {  
+    border-top: 2.5em solid #DDD;
+    border-right: 1.563em solid transparent;
+  }
+  .nav-link a:active::before {  
+    border-top: 2.5em solid transparent;
+    border-right: 1.563em solid #DDD;
+  }
+
+ 
+
+
+
+body {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    overflow: hidden;
+  
+}
+
+.title {
+    text-align: left;
+}
+
+
+</style>
 <h2>Collection Details: </h2>
 <h3>Artist: <%= @collection.artist %> </h3>
 <p>Title: <%= @collection.title || "N/A" %></p>
